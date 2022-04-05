@@ -1,4 +1,8 @@
 /*SELECCION DE USUARIO*/
+body{
+  font-family: arial, helvetica;
+  background: #e8e8e8
+}
 
 .container{
   width: 100%;

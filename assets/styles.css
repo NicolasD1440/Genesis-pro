@@ -10,11 +10,9 @@ body{
   width: 90%;
   max-width: 1000px;
   margin: auto;
-  
   border-radius: 5px;
 
-
-
+  text-align: center;
 }
 
 /*modificar la lista de enlaces del menu*/
@@ -30,6 +28,7 @@ body{
 }
 /*modificar los items de la lista del menu*/
 .Menu li{
+
   display: inline-block;
   text-align: center;
 }
