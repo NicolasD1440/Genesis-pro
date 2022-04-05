@@ -1,0 +1,29 @@
+h1{
+  margin-left: 13%;
+  margin-top: 5%;
+}
+img{
+  width: 10%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px black;
+}
+h3{
+  margin-left: 2%;
+}
+.li{
+  padding: 5px;
+}
+.container{
+  margin: auto;
+  width: 70%;
+  padding: 30px;
+  background: #FFFFFF;
+  border-radius: 6px;
+}
+.container:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+.main{
+  display: flex;
+  align-items: center;
+}
