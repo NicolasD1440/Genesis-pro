@@ -24,6 +24,7 @@
       <ul>
         <li class="li"><a href="">Actualizar contraseña</a></li>
         <li class="li"><a href="">Actualizar datos personales</a></li>
+        <li class="li"><a href="">Perfil del administrador</a></li>
         <li class="li"><a href="">Registrar usuarios</a></li>
         <li class="li"><a href="">Eliminar usuarios</a></li>
       </ul>

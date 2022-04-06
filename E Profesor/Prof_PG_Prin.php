@@ -25,7 +25,7 @@
         <li class="li"><a href="">Actualizar contraseña</a></li>
         <li class="li"><a href="">Actualizar datos personales</a></li>
         <li class="li"><a href="">Ingresar notas</a></li>
-        <li class="li"><a href="">Perfin del docente</a></li>
+        <li class="li"><a href="">Perfil del docente</a></li>
       </ul>
     </div>
   </body>
