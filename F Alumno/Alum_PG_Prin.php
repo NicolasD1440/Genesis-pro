@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Pagina principal</title>
-    <link rel="stylesheet" href="css/Estilo_PG_PPAL.css">
+    <link rel="stylesheet" href="css/Estilo.css">
     <link rel="stylesheet" type="text/css" href="../A CSS NAV/Nav.css">
   </head>
   <body>
@@ -18,14 +18,15 @@
     <div class="container">
       <div class="main">
         <img src="../B Recursos compartidos/Usuario.png" alt="Imagen del profe">
-        <h3>Hola "NOMBRE DEL PROFE" </h3>
+        <h3>Hola "NOMBRE DEL ALUMNO" </h3>
       </div>
-      <p>Esta es la página de entrada para el autoservicio Génesis Profesores. Desde aquí, puede gestionar los servicios disponibles por la institucion:</p>
+      <p>Esta es la página de entrada para el autoservicio Génesis Estudiante. Desde aquí, puede gestionar los servicios disponibles por la institucion:</p>
       <ul>
         <li class="li"><a href="">Actualizar contraseña</a></li>
         <li class="li"><a href="">Actualizar datos personales</a></li>
-        <li class="li"><a href="Agregar_Notas.php">Ingresar notas</a></li>
-        <li class="li"><a href="">Perfil del docente</a></li>
+        <li class="li"><a href="">Ver asignaturas</a></li>
+        <li class="li"><a href="">Inscribir asignaturas </a></li>
+        <li class="li"><a href="">Perfil del alumno</a></li>
       </ul>
     </div>
   </body>
