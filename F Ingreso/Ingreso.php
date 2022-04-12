@@ -6,8 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
-    <link rel="stylesheet" href="../A CSS NAV/Estilos_ingreso.css">
-    <link rel="stylesheet" href="../A CSS NAV/Normalizacion.css">
+    <link rel="stylesheet" href="../A CSS Generales/Estilos_ingreso.css">
+    <link rel="stylesheet" href="../A CSS Generales/Normalizacion.css">
     <title></title>
   </head>
   <body>
