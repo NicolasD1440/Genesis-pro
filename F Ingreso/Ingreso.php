@@ -22,7 +22,7 @@
              <form action="#" class="login-form">
                <div class="input-group">
                  <label class="input-fill">
-                   <input type="email" name="email" id="email" required />
+                   <input type="email" name="email" id="email" autocomplete="off" required />
                    <span class="input-label">Correo Electrónico</span>
                    <i class="fas fa-envelope"></i>
                  </label>
