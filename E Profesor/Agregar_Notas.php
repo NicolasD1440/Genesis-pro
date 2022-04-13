@@ -18,7 +18,7 @@
     <main class="Opciones">
       <select class="NRCS" name="">
         <option hidden selected value="1">Seleccione un NRC</option>
-        <option value="valie1">5530</option>
+        <option value="valie1">5580</option>
       </select>
     </main>
     <div class="Lista">
