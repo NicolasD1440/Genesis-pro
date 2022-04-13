@@ -14,12 +14,12 @@
 
       <ul>
 
-      <?php  echo "<li class='li'><a href=''>$array[0] </a></li>"; ?>
-      <?php  echo "<li class='li'><a href=''>$array[1]</a></li>"; ?>
-      <?php  echo "<li class='li'><a href=''>$array[2]</a></li>"; ?>
-      <?php  echo "<li class='li'><a href=''>$array[3]</a></li>"; ?>
+      <?php  echo "<li class='li'><a href='$Rutas[0]'>$array[0] </a></li>"; ?>
+      <?php  echo "<li class='li'><a href='$Rutas[1]'>$array[1]</a></li>"; ?>
+      <?php  echo "<li class='li'><a href='$Rutas[2]'>$array[2]</a></li>"; ?>
+      <?php  echo "<li class='li'><a href='$Rutas[3]'>$array[3]</a></li>"; ?>
       <?php   if ($array[4] != NULL) {
-          echo "<li class='li'><a href=''>$array[4]</a></li>";
+          echo "<li class='li'><a href='$Rutas[4]'>$array[4]</a></li>";
         } else {
           echo "";
         } ?>
