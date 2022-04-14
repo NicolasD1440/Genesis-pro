@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
     <link rel="stylesheet" href="../A CSS Generales/Estilos_ingreso.css">
     <link rel="stylesheet" href="../A CSS Generales/Normalizacion.css">
+  
     <title></title>
   </head>
   <body>
@@ -19,17 +20,17 @@
            <div class="login-data">
              <img src="Recursos/img-ingreso.svg" width="200" height="200" />
              <h1>Inicio de Sesión</h1>
-             <form action="#" class="login-form">
+             <form action="../B Recursos compartidos/validar.php" method="post"class="login-form">
                <div class="input-group">
                  <label class="input-fill">
-                   <input type="email" name="email" id="email" autocomplete="off" required />
+                   <input type="email" name="correo" id="correo" autocomplete="off" required />
                    <span class="input-label">Correo Electrónico</span>
                    <i class="fas fa-envelope"></i>
                  </label>
                </div>
                <div class="input-group">
                  <label class="input-fill">
-                   <input type="password" name="password" id="password" required />
+                   <input type="password" name="contraseña" id="contraseña" required />
                    <span class="input-label">Contraseña</span>
                    <i class="fas fa-lock"></i>
                  </label>
