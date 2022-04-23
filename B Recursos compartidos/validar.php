@@ -19,7 +19,7 @@ else{
   ?>
   <script type="text/javascript">
     alert("ERROR DE AUTENTIFICACION");
-    location.href="pagina.html";
+    location.href="../Index.php";
   </script>
 
    <?php
