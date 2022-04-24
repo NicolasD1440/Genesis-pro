@@ -93,6 +93,24 @@ while($rows=mysqli_fetch_array($resultado)) {
   }
 }
 ?>
+</div>
+</table>
+<!-- Tabla 4 -->
+<div id="tabla4">
+<table border="1">
+  <caption>MATERIAS SIGUIENTES</caption>
+<tr>
+<th>Nombre</th>
+<th>NRC</th>
+<th>Semestre</th>
+<th>Estado</th>
+</tr>
+     <tr>
+    <td>1</td>
+     <td>1</td>
+     <td>1</td>
+     <td>1</td>
+     </tr>
 </table>
 </div>
 </div>
