@@ -1,0 +1,86 @@
+#contenedor {
+display: flex;
+width: 800px;
+}
+
+#tabla1 {
+
+
+width: 400px;
+padding-top: 20px;
+}
+
+#tabla1 table {
+text-align: center;
+border-collapse: collapse;
+margin-left: 70%;
+margin-right: 20px;
+}
+
+#tabla1 table tr th {
+width: 100px
+
+}
+
+#tabla1 th{
+  background-color: green;
+  color: white;
+}
+
+#tabla1 th, td{
+  border: 2px solid black;
+}
+
+#tabla2 {
+
+
+width: 400px;
+padding-top: 20px;
+
+}
+
+#tabla2 table {
+text-align: center;
+border-collapse: collapse;
+margin-left: 80%;
+margin-right: 20px;
+}
+
+#tabla2 table tr th {
+width: 100px
+}
+
+#tabla2 th{
+  background-color: #F1B24A ;
+  color: white;
+}
+#tabla2 th, td{
+  border: 2px solid black;
+}
+
+
+#tabla3 {
+
+width: 400px;
+padding-top: 20px;
+
+}
+
+#tabla3 table {
+text-align: center;
+border-collapse: collapse;
+margin-left: 90%;
+margin-right: 20px;
+}
+
+#tabla3 table tr th {
+width: 100px;
+}
+
+#tabla3 th{
+  background-color: red ;
+  color: white;
+}
+#tabla3 th, td{
+  border: 2px solid black;
+}
