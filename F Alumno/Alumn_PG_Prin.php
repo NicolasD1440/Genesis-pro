@@ -1,6 +1,8 @@
 <?php
 error_reporting(0);
-$nombre= $NombreG;
+session_start();
+$nombre= $_SESSION['miSesion'][1];
+$apellido= $_SESSION['miSesion'][2];
 $Usuario= "alumno";
 $perfil="ESTUDIANTES";
 $v1 = "Inicio";

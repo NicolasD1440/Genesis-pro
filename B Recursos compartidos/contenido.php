@@ -4,7 +4,7 @@
       <div class="main">
         <img src="../B Recursos compartidos/Usuario.png" alt="Imagen del profe">
         <?php
-        echo "<h3>Hola $nombre </h3>";
+        echo "<h3>Hola $nombre $apellido </h3>";
          ?>
       </div>
 
