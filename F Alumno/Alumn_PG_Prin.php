@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-$nombre= "NOMBRE DEL ALUMNO";
+$nombre= $NombreG;
 $Usuario= "alumno";
 $perfil="ESTUDIANTES";
 $v1 = "Inicio";

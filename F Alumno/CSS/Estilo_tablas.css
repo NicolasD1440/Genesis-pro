@@ -1,25 +1,26 @@
 #contenedor {
 display: flex;
-width: 800px;
+width: auto;
+margin-top: 50px;
 }
 
 #tabla1 {
-
-
-width: 400px;
-padding-top: 20px;
+width: 25%;
+padding: 25px 10px;
+margin: 0 1%;
+background: linear-gradient(to bottom, #6eb063, #819957);
+border-radius: 20px;
+box-shadow: 0 0 15px black;
 }
 
 #tabla1 table {
 text-align: center;
 border-collapse: collapse;
-margin-left: 30%;
-margin-right: 20px;
+color: white;
 }
 
 #tabla1 table tr th {
-width: 100px
-
+width: 100px;
 }
 
 #tabla1 th{
@@ -29,48 +30,51 @@ width: 100px
 
 #tabla1 th, td{
   border: 2px solid black;
+  width: 20px;
+  height: auto;
 }
 
 #tabla2 {
-
-
-width: 400px;
-padding-top: 20px;
-
+width: 25%;
+padding:20px;
+margin: 0 1%;
+background: linear-gradient(to bottom, #b0af63, #f7e912);
+border-radius: 20px;
+box-shadow: 0 0 15px black;
 }
 
 #tabla2 table {
 text-align: center;
 border-collapse: collapse;
-margin-left: 40%;
-margin-right: 20px;
+color: white;
 }
 
 #tabla2 table tr th {
-width: 100px
+width: 100px;
 }
 
 #tabla2 th{
   background-color: #F1B24A ;
   color: white;
 }
+
 #tabla2 th, td{
   border: 2px solid black;
 }
 
-
 #tabla3 {
-
-width: 400px;
-padding-top: 20px;
-
+width: 25%;
+padding:20px;
+margin: 0 1%;
+background: linear-gradient(to bottom, #652b2b, #f71212);
+border-radius: 20px;
+box-shadow: 0 0 15px black;
 }
 
 #tabla3 table {
 text-align: center;
 border-collapse: collapse;
-margin-left: 30%;
-margin-right: 20px;
+color: white;
 }
 
 #tabla3 table tr th {
@@ -85,19 +89,19 @@ width: 100px;
   border: 2px solid black;
 }
 
-
 #tabla4 {
-
-width: 400px;
-padding-top: 20px;
-
+width: 25%;
+padding:20px;
+margin: 0 1%;
+background: linear-gradient(to bottom, #555555, #b4b4b4);
+border-radius: 20px;
+box-shadow: 0 0 15px black;
 }
 
 #tabla4 table {
 text-align: center;
 border-collapse: collapse;
-margin-left: 100%;
-margin-right: 20px;
+color: white;
 }
 
 #tabla4 table tr th {

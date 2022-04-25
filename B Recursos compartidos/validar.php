@@ -7,7 +7,11 @@ $_SESION["correo"] = $usuario;
 include("conexion.php");
 
 $consulta = "SELECT * FROM alumnos WHERE Correo = '$usuario' and Contraseña = '$contraseña'";
+
 $resultado = mysqli_query($app_db, $consulta);
+
+$Nom_usuario = mysqli_fetch_array($resultado);
+$NombreG = $Nom_usuario[1];
 
 $filas = mysqli_num_rows($resultado);
 
