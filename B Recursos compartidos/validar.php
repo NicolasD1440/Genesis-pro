@@ -16,6 +16,7 @@ $_SESSION['miSesion']= array();
 $_SESSION['miSesion'][0] = $Nom_usuario[0];
 $_SESSION['miSesion'][1] = $Nom_usuario[1];
 $_SESSION['miSesion'][2] = $Nom_usuario[2];
+$_SESSION['miSesion'][5] = $Nom_usuario[5];
 
 if ($filas) {
   header("location:../F Alumno/Alumn_PG_Prin.php");

@@ -3,12 +3,69 @@ display: flex;
 width: auto;
 margin-top: 50px;
 }
-
+.contenedor{
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.tabla_materias{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+#Tab_Prueba{
+  border-collapse: collapse;
+  text-align: center;
+  color: white;
+  border: 2px solid black;
+}
+#Tab_Prueba caption{
+  color: white;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#Tab_Prueba th{
+  background: #092327;
+  padding: 5px 2px;
+  border: 2px solid black;
+}
+#Tab_Prueba td{
+  padding: 5px;
+  border: 2px solid black;
+}
+.tabla_creditos{
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#tabla_creditos{
+  border-collapse: collapse;
+  text-align: center;
+  color: white;
+  border: 2px solid black;
+}
+#Tabla_creditos caption{
+  color: white;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#Tabla_creditos th{
+  background: #092327;
+  padding: 5px 5px;
+  border: 2px solid black;
+}
+#Tabla_creditos td{
+  padding: 5px;
+  border: 2px solid black;
+}
 #tabla1 {
 width: 25%;
 padding: 25px 10px;
 margin: 0 1%;
-background: linear-gradient(to bottom, #6eb063, #819957, #6eb063);
+background: linear-gradient(to bottom, #1C9031, #1DB27C, #1C9031);
 border-radius: 20px;
 box-shadow: 0 0 15px black;
 }
@@ -39,7 +96,7 @@ width: 100px;
 width: 25%;
 padding:20px;
 margin: 0 1%;
-background: linear-gradient(to bottom, #b0af63, #f7e912, #b0af63);
+background: linear-gradient(to bottom, #9F9823, #D3C827, #9F9823);
 border-radius: 20px;
 box-shadow: 0 0 15px black;
 }

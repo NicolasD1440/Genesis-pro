@@ -2,7 +2,7 @@
     <?php  echo "<h1>$perfil</h1>"; ?>
     <div class="container">
       <div class="main">
-        <img src="../B Recursos compartidos/Usuario.png" alt="Imagen del profe">
+        <img src="../B Recursos compartidos/Usuario.png" alt="Imagen del usuario">
         <?php
         echo "<h3>Hola $nombre $apellido </h3>";
          ?>

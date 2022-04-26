@@ -1,6 +1,7 @@
 body{
   font-family: arial, helvetica;
-  background: #e8e8e8
+  background: url("../B Recursos compartidos/fondo.jpg");
+  background-size: cover; 
 }
 
 .Menu{

@@ -6,9 +6,11 @@
 }
 
 body{
-  background: linear-gradient(to right, #ff9472,#848F9A);
   color: rgb(34, 34, 34);
 
+}
+h1{
+  color: black;
 }
 .Container{
   width: 100%;
