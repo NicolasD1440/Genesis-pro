@@ -24,7 +24,7 @@ h1{
 .card{
 
   width: 320px;
-  height: 340px;
+  height: 400px;
   background: #fff;
   position: absolute center;
   border-radius: 10px;
@@ -104,4 +104,8 @@ h1{
 
 .box:hover{
   background-color: rgba(128, 128, 128, 0.137);
+}
+
+#parrafo{
+  margin-top: 10px;
 }

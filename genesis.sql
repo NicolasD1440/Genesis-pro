@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 27-04-2022 a las 01:05:11
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.9
+-- Host: 127.0.0.1
+-- Generation Time: Apr 27, 2022 at 03:24 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `genesis`
+-- Database: `genesis`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `alumnos`
+-- Table structure for table `alumnos`
 --
 
 CREATE TABLE `alumnos` (
@@ -37,17 +37,18 @@ CREATE TABLE `alumnos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `alumnos`
+-- Dumping data for table `alumnos`
 --
 
 INSERT INTO `alumnos` (`id`, `Nombre`, `Apellido`, `Correo`, `Contraseña`, `Semestre_In`) VALUES
 (1, 'Cristian', 'Cruz Herrera', 'cristian@uniminuto', 2, 2),
-(2, 'Nicolas', 'Castiblanco Infante', 'nicolas@uniminuto', 2, 2);
+(2, 'Nicolas', 'Castiblanco Infante', 'nicolas@uniminuto', 2, 3),
+(3, 'Diego', 'Rivera Cardenas', 'diego@uniminuto', 2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inscribe`
+-- Table structure for table `inscribe`
 --
 
 CREATE TABLE `inscribe` (
@@ -57,7 +58,7 @@ CREATE TABLE `inscribe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `inscribe`
+-- Dumping data for table `inscribe`
 --
 
 INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
@@ -87,10 +88,6 @@ INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
 (1, 24, 4),
 (1, 25, 4),
 (1, 26, 4),
-(2, 1, 1),
-(2, 2, 1),
-(2, 1, 1),
-(2, 2, 1),
 (2, 3, 1),
 (2, 4, 3),
 (2, 5, 1),
@@ -114,12 +111,14 @@ INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
 (2, 23, 4),
 (2, 24, 4),
 (2, 25, 4),
-(2, 26, 4);
+(2, 26, 4),
+(2, 1, 1),
+(2, 2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `materias`
+-- Table structure for table `materias`
 --
 
 CREATE TABLE `materias` (
@@ -132,7 +131,7 @@ CREATE TABLE `materias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `materias`
+-- Dumping data for table `materias`
 --
 
 INSERT INTO `materias` (`Id_al`, `NRC`, `Nombre_m`, `Semestre`, `Creditos`, `Estado`) VALUES
@@ -161,12 +160,38 @@ INSERT INTO `materias` (`Id_al`, `NRC`, `Nombre_m`, `Semestre`, `Creditos`, `Est
 (1, 23, 'MATEMÁTICAS DISCRETAS', 4, 2, 2),
 (1, 24, 'INGLÉS II', 4, 3, 2),
 (1, 25, 'PROGRAMACIÓN WEB', 4, 3, 2),
-(1, 26, 'BASES DE DATOS', 4, 3, 2);
+(1, 26, 'BASES DE DATOS', 4, 3, 2),
+(2, 1, 'GESTION BASICA DE LA INFORMACIÓN', 1, 3, 1),
+(2, 2, 'ISFCOL', 1, 3, 1),
+(2, 3, 'PRECALCULO', 1, 3, 1),
+(2, 4, 'LOGICA MATEMATICA', 1, 2, 3),
+(2, 5, 'INTRODUCCION A LA INGENIERIA DE SISTEMAS', 1, 1, 1),
+(2, 6, 'PROGRAMACION BÁSICA', 1, 2, 1),
+(2, 7, 'PRUEBA CLASIFICACIÓN DE INGLES', 1, 0, 1),
+(2, 8, 'CEPLEC I', 2, 2, 1),
+(2, 9, 'INGENIERIA Y DESARROLLO REGIONAL', 2, 3, 1),
+(2, 10, 'PROYECTO DE VIDA', 2, 2, 1),
+(2, 11, 'CALCULO DIFERENCIAL', 2, 3, 3),
+(2, 12, 'PROGRAMACION ORIENTADA A OBJETOS', 2, 3, 1),
+(2, 13, 'ARQUITECTURA DE COMPUTADORES', 2, 3, 1),
+(2, 14, 'CEPLEC II', 3, 2, 2),
+(2, 15, 'INGLÉS I', 3, 3, 2),
+(2, 16, 'CATEDRA MINUTO DE DIOS', 3, 2, 2),
+(2, 17, 'CÁLCULO INTEGRAL', 3, 3, 2),
+(2, 18, 'ALGEBRA LINEAL', 3, 2, 2),
+(2, 19, 'METODOLOGÍA DE LA INVESTIGACIÓN', 3, 2, 2),
+(2, 20, 'ESTRUCTURA DE DATOS', 3, 3, 4),
+(2, 21, 'EMPRENDIMIENTO', 4, 3, 4),
+(2, 22, 'FÍSICA MECÁNICA', 4, 3, 4),
+(2, 23, 'MATEMÁTICAS DISCRETAS', 4, 2, 4),
+(2, 24, 'INGLÉS II', 4, 3, 4),
+(2, 25, 'PROGRAMACIÓN WEB', 4, 3, 4),
+(2, 26, 'BASES DE DATOS', 4, 3, 4);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `materiasp`
+-- Table structure for table `materiasp`
 --
 
 CREATE TABLE `materiasp` (
@@ -177,7 +202,7 @@ CREATE TABLE `materiasp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `materiasp`
+-- Dumping data for table `materiasp`
 --
 
 INSERT INTO `materiasp` (`NRC`, `Nombre_m`, `Semestre`, `Creditos`) VALUES
@@ -211,7 +236,7 @@ INSERT INTO `materiasp` (`NRC`, `Nombre_m`, `Semestre`, `Creditos`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -224,61 +249,62 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`Id`, `nombre`, `apellido`, `correo`, `contraseña`, `semestre_in`) VALUES
 (1, 'Cristian', 'Cruz Herrera', 'cristian@uniminuto', 123, 2),
-(2, 'Nicolas ', 'Castiblanco infante', 'nicolas@uniminuto', 2, 3);
+(2, 'Nicolas ', 'Castiblanco infante', 'nicolas@uniminuto', 2, 3),
+(3, 'Diego', 'Rivera Cardenas', 'diego@uniminuto', 2, 1);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `alumnos`
+-- Indexes for table `alumnos`
 --
 ALTER TABLE `alumnos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `inscribe`
+-- Indexes for table `inscribe`
 --
 ALTER TABLE `inscribe`
   ADD KEY `Id` (`Id`,`NRCM`),
   ADD KEY `NRC` (`NRCM`);
 
 --
--- Indices de la tabla `materias`
+-- Indexes for table `materias`
 --
 ALTER TABLE `materias`
   ADD KEY `Id_al` (`Id_al`);
 
 --
--- Indices de la tabla `materiasp`
+-- Indexes for table `materiasp`
 --
 ALTER TABLE `materiasp`
   ADD PRIMARY KEY (`NRC`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `inscribe`
+-- Constraints for table `inscribe`
 --
 ALTER TABLE `inscribe`
   ADD CONSTRAINT `inscribe_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `usuarios` (`Id`),
   ADD CONSTRAINT `inscribe_ibfk_2` FOREIGN KEY (`NRCM`) REFERENCES `materiasp` (`NRC`);
 
 --
--- Filtros para la tabla `materias`
+-- Constraints for table `materias`
 --
 ALTER TABLE `materias`
   ADD CONSTRAINT `materias_ibfk_1` FOREIGN KEY (`Id_al`) REFERENCES `alumnos` (`id`);

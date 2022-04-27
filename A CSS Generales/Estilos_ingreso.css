@@ -9,7 +9,7 @@ body {
 }
 
 .waves {
-  background-image: url('../assets/wave.png');
+  background-image: url('../F Ingreso/Recursos/wave.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -54,7 +54,7 @@ body {
 
 .input-fill input:focus {
   outline: none;
-  border-color: #ef8354;
+  border-color: #8154EF;
 }
 
 .input-fill input:hover {
@@ -62,18 +62,17 @@ body {
 }
 
 .input-fill input:focus + .input-label {
-  top: 0;
   margin-bottom: 2rem;
-  color: #ef8354;
+  color: #8154EF;
 }
 
 .input-fill input:focus ~ i {
-  color: #ef8354;
+  color: #8154EF;
 }
 
 .input-fill .input-label {
   position: absolute;
-  top: 15px;
+  top: 0;
   left: 28px;
   line-height: 147.6%;
   color: #092327;
@@ -102,16 +101,16 @@ body {
 }
 
 .login-form a:hover {
-  color: #ef8354;
+  color: #8154EF;
 }
 
 .btn-login {
   border-radius: 3rem;
   width: 45%;
-  border: 1px solid #ef8354;
+  border: 1px solid #8154EF;
   line-height: 1.6rem;
   font-size: 1.3rem;
-  background-color: #ef8354;
+  background-color: #8154EF;
   color: #ffffff;
   padding: 0.5rem 0;
   transition: 0.3s ease-in-out all;
@@ -121,16 +120,16 @@ body {
 .btn-login:hover {
   cursor: pointer;
   background-color: #ffffff;
-  color: #ef8354;
+  color: #8154EF;
 }
 
 .ingreso input:focus + .ingreso-label{
   top: 0;
   margin-bottom: 2rem;
-  color: #ef8354;
+  color: #8154EF;
 }
 .ingreso input:focus ~i{
-  color:  #ef8354;
+  color:  #8154EF;
 }
 
 .ingreso .ingreso-label{
@@ -163,24 +162,5 @@ body {
   font-size: 18px;
 }
 .formulario a:hover{
-  color: #ef8354;
-}
-
-.btn-login {
-  border-radius: 3rem;
-  width: 45%;
-  border: 1px solid #ef8354;
-  line-height: 1.6rem;
-  font-size: 1.3rem;
-  background-color: #ef8354;
-  color: #ffffff;
-  padding: 0.5rem 0;
-  transition: 0.3s ease-in-out all;
-  font-weight: 500;
-}
-
-.btn-login:hover {
-  cursor: pointer;
-  background-color: #ffffff;
   color: #ef8354;
 }

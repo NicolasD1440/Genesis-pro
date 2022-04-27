@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
     <link rel="stylesheet" href="../A CSS Generales/Estilos_ingreso.css">
     <link rel="stylesheet" href="../A CSS Generales/Normalizacion.css">
-  
+
     <title></title>
   </head>
   <body>
@@ -23,7 +23,7 @@
              <form action="../B Recursos compartidos/validar.php" method="post"class="login-form">
                <div class="input-group">
                  <label class="input-fill">
-                   <input type="email" name="correo" id="correo" autocomplete="off" required />
+                   <input type="email" name="correo" id="correo" autocomplete="on" required />
                    <span class="input-label">Correo Electrónico</span>
                    <i class="fas fa-envelope"></i>
                  </label>
