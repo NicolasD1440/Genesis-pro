@@ -12,7 +12,8 @@
 <?php
 error_reporting(0);
 $v1 = "Inicio";
-require("B Recursos compartidos/barra-nav.php"); ?>
+require("B Recursos compartidos/barra-nav.php");
+?>
 
    <div class="container">
      <!-- Modulo de estudiante -->
@@ -23,7 +24,7 @@ require("B Recursos compartidos/barra-nav.php"); ?>
        <div class="content">
          <h3>Estudiante</h3>
          <p> Inicia sesion como estudiante </p>
-         <a href="F Ingreso/Ingreso.php">Ingresar</a>
+         <a href="F Ingreso/Ingreso.php?Usuario=alumnos&Correo=correo&Contraseña=contraseña">Ingresar</a>
        </div>
      </div>
     <!-- Modulo de docente -->
@@ -45,7 +46,7 @@ require("B Recursos compartidos/barra-nav.php"); ?>
        <div class="content">
          <h3>administrador</h3>
          <p> Inicia sesion como administrador </p>
-         <a href="F Ingreso/Ingreso.php">Ingresar</a>
+         <a href="F Ingreso/Ingreso.php?Usuario=administradores&Correo=CorreoAdmin&Contraseña=ContraseñaAdmin">Ingresar</a>
        </div>
      </div>
    </div>

@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="../A CSS Generales/Estilos_ingreso.css">
     <link rel="stylesheet" href="../A CSS Generales/Normalizacion.css">
 
-    <title></title>
+    <title>Login</title>
+
+    <?php
+    session_start();
+    $_SESSION['Usuario']= $_GET["Usuario"];
+    $_SESSION['Correo']= $_GET["Correo"];
+    $_SESSION['Contraseña']= $_GET["Contraseña"];
+     ?>
   </head>
   <body>
     <main class="login-design">

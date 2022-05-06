@@ -1,125 +1,114 @@
+<link rel="stylesheet" href="CSS/Estilo_tablas.css">
 <?php
 session_start();
 $v1 = "Atras";
 $Ruta = "Alumn_PG_Prin.php";
 require("../B Recursos compartidos/barra-nav.php");
-?>
-<link rel="stylesheet" href="CSS/Estilo_tablas.css">
-
-<?php
 include("../B Recursos compartidos/conexion.php");
-
-$Id = $_SESSION['miSesion'][0];
-
-$consulta = "SELECT Nombre_m, NRC, Semestre, Creditos, Estado, Semestre_In FROM alumnos a INNER JOIN materias b WHERE b.Id_al = $Id and a.id = $Id";
-$resultado = mysqli_query($app_db, $consulta);
+$ID = $_SESSION['miSesion'][0];
 ?>
 
-<div id="contenedor">
-    <div id="tabla1">
-      <!-- Tabla 1 meterias aprobadas -->
-        <table border="1">
-            <caption>MATERIAS APROBADAS</caption>
-            <tr>
-            <th>Nombre</th>
-            <th>NRC</th>
-            <th>Semestre</th>
-            <th>Creditos</th>
-            </tr>
+<div class="contenedor">
+  <aside class="tabla_materias">
+    <table id="Tab_Prueba" border="1">
+      <caption>Descripcion asignaturas</caption>
+      <tr>
+        <th>NRC</th>
+        <th>Asignatura</th>
+        <th>Semestre</th>
+        <th>Creditos</th>
+      </tr>
 
-            <?php
-              while($rows = mysqli_fetch_array($resultado)) {
-                 if ($rows[4] == "1") {
-                   echo "<tr>";
-                   echo "<td>$rows[0]</td>";
-                   echo "<td>$rows[1]</td>";
-                   echo "<td>$rows[2]</td>";
-                   echo "<td>$rows[3]</td>";
-                   echo "</tr>";
-                }
-              }
-           ?>
-        </table>
-    </div>
-<!-- Tabla 2 meteria por inscribir -->
-    <div id="tabla2">
-        <table border="1">
-            <caption>MATERIAS POR INSCRIBIR</caption>
-            <tr>
-            <th>Nombre</th>
-            <th>NRC</th>
-            <th>Semestre</th>
-            <th>Creditos</th>
-            </tr>
+      <?php
+      function color2($estado){
+        switch ($estado) {
+          case 1:
+            $Color = "#1C9031";
+            return $Color;
+          break;
+          case 2:
+            $Color = "#9F9823";
+            return $Color;
+          break;
+          case 3:
+            $Color = "#652b2b";
+            return $Color;
+          break;
+          case 4:
+            $Color = "#555555";
+            return $Color;
+          break;
+          default:
+            $Color = "";
+            return $Color;
+            break;
+        }
+      }
 
-            <?php
-            $consulta = "SELECT Nombre_m, NRC, Semestre, Creditos, Estado, Semestre_In FROM alumnos a INNER JOIN materias b WHERE b.Id_al = $Id and a.id = $Id";
-            $resultado = mysqli_query($app_db, $consulta);
-              while($rows = mysqli_fetch_array($resultado)) {
-                 if ($rows[2] > $rows[5]) {
-                   echo "<tr>";
-                   echo "<td>$rows[0]</td>";
-                   echo "<td>$rows[1]</td>";
-                   echo "<td>$rows[2]</td>";
-                   echo "<td>$rows[3]</td>";
-                   echo "</tr>";
-                }
-              }
-            ?>
-        </table>
-    </div>
-<!-- Tabla 3 meterias reprobadas -->
-    <div id="tabla3">
-        <table border="1">
-            <caption>MATERIAS REPROBADAS</caption>
-            <tr>
-            <th>Nombre</th>
-            <th>NRC</th>
-            <th>Semestre</th>
-            <th>Creditos</th>
-            </tr>
+        $consulta = "SELECT NRC, Nombre_m, semestre, creditos, Estado from materias JOIN inscribe on inscribe.Id = $ID and materias.NRC = inscribe.NRCM";
+        $resultado = mysqli_query($app_db, $consulta);
 
-            <?php
-              $consulta = "SELECT Nombre_m, NRC, Semestre, Creditos, Estado, Semestre_In FROM alumnos a INNER JOIN materias b WHERE b.Id_al = $Id and a.id = $Id";
-              $resultado = mysqli_query($app_db, $consulta);
-              while($rows = mysqli_fetch_array($resultado)) {
-                 if ($rows[4] == "3") {
-                   echo "<tr>";
-                   echo "<td>$rows[0]</td>";
-                   echo "<td>$rows[1]</td>";
-                   echo "<td>$rows[2]</td>";
-                   echo "<td>$rows[3]</td>";
-                   echo "</tr>";
-                }
-              }
-            ?>
-        </table>
-  </div>
-<!-- Tabla 4 -->
-    <div id="tabla4">
-        <table border="1">
-            <caption>MATERIAS SIGUIENTE SEMESTRE</caption>
-            <tr>
-            <th>Nombre</th>
-            <th>NRC</th>
-            <th>Semestre</th>
-            <th>Creditos</th>
-            </tr>
+        while($rows = mysqli_fetch_array($resultado)) {
 
-            <?php
-              $consulta = "SELECT Nombre_m, NRC, Semestre, Creditos, Estado, Semestre_In FROM alumnos a INNER JOIN materias b WHERE b.Id_al = $Id and a.id = $Id";
-              $resultado = mysqli_query($app_db, $consulta);
-              while($rows = mysqli_fetch_array($resultado)) {
-                 if ($rows[2] == ($rows[5]+1) ) {
-                   echo "<tr>";
-                   echo "<td>$rows[0]</td>";
-                   echo "<td>$rows[1]</td>";
-                   echo "<td>$rows[2]</td>";
-                   echo "<td>$rows[3]</td>";
-                   echo "</tr>";
-                }
-              }
-            ?>
-        </table>
-    </div>
+            $col = color2($rows[4], $rows[2]);
+             echo "<tr>";
+             echo "<td bgcolor = $col >$rows[0]</td>";
+             echo "<td bgcolor = $col >$rows[1]</td>";
+             echo "<td bgcolor = $col >$rows[2]</td>";
+             echo "<td bgcolor = $col >$rows[3]</td>";
+             echo "</tr>";
+
+        }
+      ?>
+    </table>
+  </aside>
+  <aside class="tabla_creditos">
+    <table id="Tabla_creditos" border = "1">
+      <caption>Informacion de creditos</caption>
+      <tr>
+        <th>Creditos aprobados</th>
+        <th>Creditos en curso</th>
+        <th>Creditos reprobados</th>
+        <th>Creditos faltantes</th>
+      </tr>
+
+      <?php
+        $consulta1 = "SELECT SUM(CREDITOS) from materias JOIN inscribe on inscribe.Id = $ID and materias.NRC = inscribe.NRCM AND inscribe.Estado = 1";
+        $resultado = mysqli_query($app_db, $consulta1);
+
+      echo "<tr>";
+        while($rows = mysqli_fetch_array($resultado)) {
+            $col = color2(1);
+
+             echo "<td bgcolor = $col >$rows[0]</td>";
+
+        }
+
+          $consulta1 = "SELECT SUM(CREDITOS) from materias JOIN inscribe on inscribe.Id = $ID and materias.NRC = inscribe.NRCM AND inscribe.Estado = 2";
+          $resultado = mysqli_query($app_db, $consulta1);
+
+          while($rows = mysqli_fetch_array($resultado)) {
+              $col = color2(2);
+               echo "<td bgcolor = $col >$rows[0]</td>";
+          }
+
+          $consulta1 = "SELECT SUM(CREDITOS) from materias JOIN inscribe on inscribe.Id = $ID and materias.NRC = inscribe.NRCM AND inscribe.Estado = 3";
+          $resultado = mysqli_query($app_db, $consulta1);
+
+          while($rows = mysqli_fetch_array($resultado)) {
+              $col = color2(3);
+               echo "<td bgcolor = $col >$rows[0]</td>";
+          }
+
+          $consulta1 = "SELECT SUM(CREDITOS) from materias JOIN inscribe on inscribe.Id = $ID and materias.NRC = inscribe.NRCM AND inscribe.Estado = 4";
+          $resultado = mysqli_query($app_db, $consulta1);
+
+          while($rows = mysqli_fetch_array($resultado)) {
+              $col = color2(4);
+               echo "<td bgcolor = $col >$rows[0]</td>";
+          }
+        echo "</tr>";
+      ?>
+    </table>
+  </aside>
 </div>
