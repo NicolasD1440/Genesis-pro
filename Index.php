@@ -35,7 +35,7 @@ require("B Recursos compartidos/barra-nav.php");
        <div class="content">
          <h3>Docente</h3>
          <p> Inicia sesion como docente </p>
-         <a href="F Ingreso/Ingreso.php">Ingresar</a>
+         <a href="F Ingreso/Ingreso.php?Usuario=docentes&Correo=CorreoDoc&Contraseña=ContraseñaDoc">Ingresar</a>
        </div>
      </div>
      <!-- Modulo de administrador -->

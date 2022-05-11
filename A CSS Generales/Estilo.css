@@ -1,6 +1,9 @@
 h1{
   margin-left: 13%;
   margin-top: 5%;
+  color: black;
+}
+.T1{
   color: white;
 }
 .img1{
@@ -16,6 +19,7 @@ h3{
 }
 .container{
   margin: auto;
+  margin-top: 20px;
   width: 70%;
   padding: 30px;
   background: #FFFFFF;

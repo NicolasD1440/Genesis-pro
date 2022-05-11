@@ -9,7 +9,6 @@ $contraseña = $_POST["contraseña"];
 include("conexion.php");
 
 $consulta = "SELECT * FROM $tabla WHERE $Tipo_Correo = '$usuario' and $Tipo_Contraseña = '$contraseña'";
-
 $resultado = mysqli_query($app_db, $consulta);
 
 $Nom_usuario = mysqli_fetch_array($resultado);
@@ -25,6 +24,9 @@ $_SESSION['miSesion'][5] = $Nom_usuario[5];
 
 if ($filas && $tabla =="alumnos") {
   header("location:../F Alumno/Alumn_PG_Prin.php");
+}
+else if ($filas && $tabla =="docentes") {
+  header("location:../E Profesor/Prof_PG_Prin.php");
 }
 else if ($filas && $tabla =="administradores") {
   header("location:../D Administrador/Admin_PG_Prin.php");
