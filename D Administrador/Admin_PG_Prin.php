@@ -7,10 +7,11 @@ $Usuario= "administracion";
 $perfil="ADMINISTRACION";
 $v1 = "Inicio";
 $Ruta = "../Index.php";
-$Rutas = array("x", "x2","x3", "x4", "x5","x6");
-$array = array("Actualizar contraseña", "Actualizar datos personales", "Perfil del administrador", "Registrar usuarios","Administrar usuarios", "Administrar asignaturas");
+$Rutas = array("../B recursos compartidos/Perfil.php", "Administrar_usuarios.php","Administrar_asignaturas.php");
+$array = array("Actualizar datos personales","Administrar usuarios", "Administrar asignaturas");
 require("../B Recursos compartidos/barra-nav.php");
 require("../B Recursos compartidos/contenido.php");
+
 
 
  ?>

@@ -11,6 +11,7 @@
   <body>
 <?php
 error_reporting(0);
+session_start();
 $v1 = "Inicio";
 require("B Recursos compartidos/barra-nav.php");
 ?>
@@ -51,5 +52,6 @@ require("B Recursos compartidos/barra-nav.php");
      </div>
    </div>
       <h1><?php echo $error ?></h1>
+
   </body>
 </html>
