@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 11-05-2022 a las 02:12:27
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.9
+-- Host: 127.0.0.1
+-- Generation Time: May 14, 2022 at 02:26 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `genesis`
+-- Database: `genesis`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `administradores`
+-- Table structure for table `administradores`
 --
 
 CREATE TABLE `administradores` (
@@ -36,7 +36,7 @@ CREATE TABLE `administradores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `administradores`
+-- Dumping data for table `administradores`
 --
 
 INSERT INTO `administradores` (`IdAdmin`, `NombreAdmin`, `ApellidoAdmin`, `CorreoAdmin`, `ContraseñaAdmin`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `administradores` (`IdAdmin`, `NombreAdmin`, `ApellidoAdmin`, `Corre
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `alumnos`
+-- Table structure for table `alumnos`
 --
 
 CREATE TABLE `alumnos` (
@@ -58,7 +58,7 @@ CREATE TABLE `alumnos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `alumnos`
+-- Dumping data for table `alumnos`
 --
 
 INSERT INTO `alumnos` (`Id`, `nombre`, `apellido`, `correo`, `contraseña`, `semestre_in`) VALUES
@@ -69,29 +69,29 @@ INSERT INTO `alumnos` (`Id`, `nombre`, `apellido`, `correo`, `contraseña`, `sem
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `docentes`
+-- Table structure for table `docentes`
 --
 
 CREATE TABLE `docentes` (
+  `id_Doc` int(11) NOT NULL,
   `NombreDoc` varchar(30) NOT NULL,
   `ApellidoDoc` varchar(45) NOT NULL,
   `CorreoDoc` varchar(45) NOT NULL,
-  `ContraseñaDoc` varchar(45) NOT NULL,
-  `IdDoc` int(11) NOT NULL
+  `ContraseñaDoc` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `docentes`
+-- Dumping data for table `docentes`
 --
 
-INSERT INTO `docentes` (`NombreDoc`, `ApellidoDoc`, `CorreoDoc`, `ContraseñaDoc`, `IdDoc`) VALUES
-('Jaime Andres', 'Tovar Muñetones', 'Jaime@uniminuto', '5', 1),
-('Guillermo Enrique ', 'Becerra Pirajan', 'Guillermo@uniminuto', '5', 2);
+INSERT INTO `docentes` (`id_Doc`, `NombreDoc`, `ApellidoDoc`, `CorreoDoc`, `ContraseñaDoc`) VALUES
+(2, 'Jaime Andres', 'Tovar Muñetones', 'Jaime@uniminuto', '9'),
+(1, 'Guillermo Enrique ', 'Becerra Pirajan', 'Guillermo@uniminuto', '9');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inscribe`
+-- Table structure for table `inscribe`
 --
 
 CREATE TABLE `inscribe` (
@@ -101,7 +101,7 @@ CREATE TABLE `inscribe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `inscribe`
+-- Dumping data for table `inscribe`
 --
 
 INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
@@ -301,7 +301,7 @@ INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `materias`
+-- Table structure for table `materias`
 --
 
 CREATE TABLE `materias` (
@@ -312,7 +312,7 @@ CREATE TABLE `materias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `materias`
+-- Dumping data for table `materias`
 --
 
 INSERT INTO `materias` (`NRC`, `Nombre_m`, `Semestre`, `Creditos`) VALUES
@@ -382,34 +382,34 @@ INSERT INTO `materias` (`NRC`, `Nombre_m`, `Semestre`, `Creditos`) VALUES
 (64, 'ELECTIVA CPC III', 10, 2);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `alumnos`
+-- Indexes for table `alumnos`
 --
 ALTER TABLE `alumnos`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indices de la tabla `inscribe`
+-- Indexes for table `inscribe`
 --
 ALTER TABLE `inscribe`
   ADD KEY `Id` (`Id`,`NRCM`),
   ADD KEY `NRC` (`NRCM`);
 
 --
--- Indices de la tabla `materias`
+-- Indexes for table `materias`
 --
 ALTER TABLE `materias`
   ADD PRIMARY KEY (`NRC`);
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `inscribe`
+-- Constraints for table `inscribe`
 --
 ALTER TABLE `inscribe`
   ADD CONSTRAINT `inscribe_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `alumnos` (`Id`),
