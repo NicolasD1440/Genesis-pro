@@ -1,8 +1,14 @@
 /*SELECCION DE USUARIO*/
-body{
-  font-family: arial, helvetica;
+html{
+  height: 100%;
 }
-
+body{
+  margin: 0;
+  padding-top: 1%;
+  font-family: 'Dosis', sans-serif;
+  background: linear-gradient(to bottom, #665FA2, #5F78A2, #9B5A46);
+  background-size: cover;
+}
 .container{
   width: 100%;
   height: auto;

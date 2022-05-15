@@ -1,0 +1,38 @@
+.cont_inscribir{
+  margin: auto;
+  margin-top: 20px;
+  width: 50%;
+  padding: 30px;
+  background: #FFFFFF;
+  border-radius: 6px;
+}
+.cont_inscribir:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+.inscribir{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.titulo{
+  color: black;
+  margin: 0 0;
+  margin-bottom: 2%;
+}
+p{
+  font-size: 15px;
+}
+.form-select{
+  width: 30%;
+  text-align: center;
+  background: #29B3C4;
+  color: white;
+}
+.tabla{
+  width: 100%;
+  margin-top: 3%;
+}
+.agregar{
+  margin-top: 3%;
+  width: 15%;
+}

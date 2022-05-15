@@ -3,8 +3,11 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Actualizar datos personales</title>
-    <link rel="stylesheet" href="CSS/estilos.css">
+    <title>Perfil del alumno</title>
+    <link rel="stylesheet" href="../A assets General/Body.css">
+    <link rel="stylesheet" href="assets/perfil.css">
+    <link rel="stylesheet" type="text/css" href="../A assets General/Nav.css">
+    <script src="https://kit.fontawesome.com/f959a384d4.js" crossorigin="anonymous"></script>
     <?php
       session_start();
       $nombre = $_SESSION['miSesion'][1];
@@ -13,19 +16,19 @@
       $correo_alumno = $_SESSION['miSesion'][3];
       $Semestre = $_SESSION['miSesion'][5];
 
-      $v1 = "Atras";
+      $v1 = "<i class='fas fa-arrow-left'></i> Atras";
       $Ruta = "Alumn_PG_Prin.php";
-      require("../B Recursos compartidos/barra-nav.php");
       include("../B Recursos compartidos/conexion.php");
       $consulta = "SELECT COUNT(Estado) FROM inscribe WHERE Estado = 1 AND Id = $ID";
       $resultado = mysqli_query($app_db, $consulta);
     ?>
   </head>
   <body>
+    <?php require("../B Recursos compartidos/barra-nav.php"); ?>
     <div class="Container">
         <div class="card">
           <div class="img">
-            <img src="Perfil/usuario-de-perfil.png" alt="">
+            <img src="../B Recursos compartidos/Resources/usuario-de-perfil.png" alt="">
           </div>
           <div class="contenido">
              <?php echo "<h3>$nombre $apellido </h3>"; ?>

@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../A assets General/Body.css">
+    <link rel="stylesheet" type="text/css" href="../A assets General/Nav.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
@@ -32,15 +34,15 @@
        echo "Ha ocurrido un error inesperado";
           break;
       }
-      require("../B Recursos compartidos/barra-nav.php");
-
     ?>
+
   </head>
   <body>
+    <?php require("../B Recursos compartidos/barra-nav.php"); ?>
+    <br>
     <div class="container">
       <div class="row">
-       <div class="col-md-8 offset-md-2">
-
+       <div class="caja col-md-8 offset-md-2">
          <ul class="nav nav-tabs" id="myTab" role="tablist">
            <li class="nav-item" role="presentation">
              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos personales</button>
@@ -50,12 +52,12 @@
            </li>
          </ul>
          <br>
-         <div class="tab-content" id="myTabContent">
+         <div class="tab-content" id="myTabContent" >
            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
              <div class="row">
 
                <div class="col-4">
-                 <img class="img-thumbnail" src="usuario-de-perfil.png" width="200px" >
+                 <img class="img-thumbnail" src="../B Recursos compartidos/Resources/usuario-de-perfil.png" width="200px" >
                </div>
 
                <div class="col-8">
@@ -107,6 +109,7 @@
                </div>
              </div>
            </div>
+
            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
              <div class="col-md-8 offset-md-3">
                <h3 class="text-center">Cambio de clave</h3>
@@ -131,6 +134,11 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
         </from>
 
 

@@ -1,0 +1,18 @@
+html{
+  height: 100%;
+}
+body{
+  margin: 0;
+  padding-top: 1%;
+  font-family: 'Dosis', sans-serif;
+  background: linear-gradient(to bottom, #665FA2, #5F78A2, #9B5A46);
+}
+
+.Opciones{
+  text-align: center;
+  padding-top: 2%;
+}
+.NRCS{
+  padding: 0.3%;
+  width: 50%;
+}

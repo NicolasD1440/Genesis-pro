@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Agregar notas</title>
-    <link rel="stylesheet" href="Resources/Estilo_ADD_Notas.css">
-    <link rel="stylesheet" type="text/css" href="../A CSS NAV/Nav.css">
+    <link rel="stylesheet" href="assets/Estilo_ADD_Notas.css">
+    <link rel="stylesheet" type="text/css" href="../A assets General/Nav.css">
     <script src="https://kit.fontawesome.com/f959a384d4.js" crossorigin="anonymous"></script>
   </head>
   <body>

@@ -2,26 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/Adm_materias.css">
+    <link rel="stylesheet" type="text/css" href="../A assets General/Nav.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f959a384d4.js" crossorigin="anonymous"></script>
-    <title>Actualizar perfil</title>
+    <title>Administrar asignaturas</title>
     <?php
       session_start();
 
       $v1 ="<i class='fas fa-arrow-left'></i> Atras";
       $Ruta = "../D Administrador/Admin_PG_Prin.php";
       require("../B Recursos compartidos/barra-nav.php");
-        include("../B Recursos compartidos/conexion.php");
+      include("../B Recursos compartidos/conexion.php");
 
     ?>
   </head>
   <body>
+    <br>
     <div class="container">
       <div class="row">
-       <div class="col-md-8 offset-md-2">
+       <div class="caja col-md-8 offset-md-2">
 
          <ul class="nav nav-tabs" id="myTab" role="tablist">
            <li class="nav-item" role="presentation">

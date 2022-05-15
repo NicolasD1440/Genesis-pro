@@ -1,8 +1,19 @@
 
-    <?php  echo "<h1 class = 'T1'>$perfil</h1>"; ?>
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pagina principal</title>
+    <link rel="stylesheet" href="../A assets General/Contenido.css">
+    <link rel="stylesheet" type="text/css" href="../A assets General/Nav.css">
+  </head>
+  <body>
+    <?php
+    include 'barra-nav.php';
+    echo "<h1 class = 'T1'>$perfil</h1>";?>
     <div class="container">
       <div class="main">
-        <img src="../B Recursos compartidos/Usuario.png" alt="Imagen del usuario" class="img1">
+        <img src="../B Recursos compartidos/Resources/Usuario.png" alt="Imagen del usuario" class="img1">
         <?php
         echo "<h3>Hola $nombre $apellido </h3>";
          ?>

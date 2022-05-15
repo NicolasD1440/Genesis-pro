@@ -1,0 +1,20 @@
+html{
+  height: 100%;
+}
+body{
+  margin: 0;
+  padding-top: 1%;
+  font-family: 'Dosis', sans-serif;
+  background: linear-gradient(to bottom, #665FA2, #5F78A2, #9B5A46);
+}
+.caja{
+  margin: auto;
+  margin-top: 20px;
+  width: 70%;
+  padding: 30px;
+  background: #FFFFFF;
+  border-radius: 6px;
+}
+.caja:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
