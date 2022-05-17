@@ -7,7 +7,7 @@ $Usuario= "profesores";
 $perfil="PROFESORES";
 $v1 = "Cerrar sesión";
 $Ruta = "../B Recursos compartidos/logout.php";
-$Rutas = array("../B recursos compartidos/Actualizar_Perfil.php","Agregar_Notas.php","x3");
+$Rutas = array("../B recursos compartidos/Actualizar_Perfil.php","Agregar_Notas.php","../B Recursos compartidos/404.php");
 $array = array("Actualizar datos personales", "Ingresar notas", "Perfil del docente");
 require("../B Recursos compartidos/contenido.php");
  ?>

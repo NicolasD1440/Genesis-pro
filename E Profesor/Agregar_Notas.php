@@ -37,7 +37,7 @@
 
         <?php
           if (isset($_GET['NRCS'])) {
-            $Dato = $_GET['NRCS'];
+            $_SESSION['Dato'] = $Dato = $_GET['NRCS'];
             $consulta = "SELECT alumnos.Id, nombre, apellido, semestre_in FROM inscribe JOIN alumnos on inscribe.Id = alumnos.Id AND inscribe.NRCM = $Dato AND inscribe.Estado = 2 ";
             $resultado = mysqli_query($app_db, $consulta);
         ?>
@@ -57,12 +57,16 @@
             <?php
               while ($Rows = mysqli_fetch_array($resultado)) {
                 $_SESSION['NRC'] = $Rows[0];
+                $_SESSION['id_g'] = $Id_global = $Rows[0];
+                $nombre_global = $Rows[1];
+                $apellido_global = $Rows[2];
+
                 echo "<tr>";
                 echo "<td>$Rows[0]</td>";
                 echo "<td>$Rows[1]</td>";
                 echo "<td>$Rows[2]</td>";
                 echo "<td>$Rows[3]</td>";
-                echo "<td><a href='#'>Agregar nota</a></td>";
+                echo "<td><button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='@mdo'>Agregar nota</button></td>";
                 echo "</tr>";
               }
             }
@@ -71,5 +75,58 @@
       </div>
       </form>
     </main>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="Agregar_Notas.php" method="">
+
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Nombre:</label>
+            <input type="text" class="form-control" value="<?php echo $GLOBALS['nombre_global']; ?>" id="recipient-name" readonly>
+          </div>
+
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Apellido:</label>
+            <input type="text" class="form-control"  value="<?php echo $GLOBALS['apellido_global']; ?>" id="recipient-name" readonly>
+          </div>
+
+          <div class="mb-3">
+            <select class="form-select notas" name="notas">
+               <option disabled selected value="0">Seleccione un Estado</option>
+               <option value='1'>Aprobado</option>"
+               <option value='3'>Reprobado</option>"
+            </select>
+          </div>
+          <?php
+
+
+          if (isset($_GET['notas'])) {
+           $id_p =$_SESSION['id_g'];
+           $nrc_p = $_SESSION['Dato'];
+           $nota = $_GET['notas'];
+           $consulta2 = "UPDATE `inscribe` SET `Estado`= $nota WHERE Id =$id_p AND NRCM =$nrc_p ";
+           $resultado2 = mysqli_query($app_db, $consulta2);
+          }
+           ?>
+           <div class="modal-footer">
+             <button type="submit"  name="boton" class="btn btn-primary">Actualizar nota</button>
+           </div>
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>

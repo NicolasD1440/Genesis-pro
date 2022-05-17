@@ -23,7 +23,7 @@
   <body>
     <br>
     <div class="container">
-       <div class="caja col-md-10 " >
+       <div class="caja col-md-12 " >
          <ul class="nav nav-tabs" id="myTab" role="tablist">
            <li class="nav-item" role="presentation">
              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Administrar Alumnos</button>
@@ -151,6 +151,7 @@
            </div>
 
          <!-- Administrar Docentes -->
+
            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
              <div class="row">
 
@@ -230,23 +231,35 @@
                     <th>Correo</th>
                     <th>Contraseña</th>
                     <th>Asignatura</th>
+                    <th>Asignar NRC</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
 
                   <?php
+                  function consulta($id){
+                    $query = "SELECT * FROM dicta WHERE id_Doc = $id";
+                    $result = mysqli_query($app_db, $query);
+                    while ($nrcs = mysqli_fetch_array($result)) {
+                      echo $nrcs[0];
+                      return $nrcs[0];
+                    }
+                  }
+              
+
                   $consulta = "SELECT * FROM docentes";
                   $resultado = mysqli_query($app_db, $consulta);
-
                   while ($Datos = mysqli_fetch_array($resultado)) {
                     echo "<tr>";
+                    $_SESSION['Id_prof'] = $Datos[0];
                     echo "<td>$Datos[0]</td>";
                     echo "<td>$Datos[1]</td>";
                     echo "<td>$Datos[2]</td>";
                     echo "<td>$Datos[3]</td>";
                     echo "<td>$Datos[4]</td>";
-                    echo "<td>---------</td>";
+                    echo "<td>-----------</td>";
+                    echo "<td><button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='@mdo'>Asignar NRC</button></td>";
                     echo "<td><a href='accion.php?Id_Doc=$Datos[0]'>Eliminar</a></td>";
                     echo "</tr>";
                   }
@@ -254,6 +267,60 @@
 
                  </tbody>
                </table>
+
+               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                     <div class="modal-body">
+                       <form action="Administrar_usuarios.php" method="">
+
+                         <div class="mb-3">
+                           <label for="recipient-name" class="col-form-label">ID:</label>
+                           <input type="text" class="form-control" value="<?php echo $_SESSION['Id_prof'];  ?>" id="recipient-name" readonly>
+                         </div>
+
+
+                         <div class="mb-3">
+                           <select class="form-select notas" name="nrc">
+                              <option disabled selected value="0">Seleccione un NRC</option>
+                              <?php
+                                $consulta = "SELECT NRC FROM materias";
+                                $resultado = mysqli_query($app_db, $consulta);
+
+                                while ($Datos = mysqli_fetch_array($resultado)) {
+                                  echo "<option value='$Datos[0]'> $Datos[0] </option>";
+                                }
+                              ?>
+                           </select>
+                         </div>
+
+                          <div class="modal-footer">
+                            <button type="submit"  name="boton" class="btn btn-primary">Asignar</button>
+                          </div>
+                          <?php
+
+                          if (isset($_GET['nrc'])) {
+                           $id_prof = $_SESSION['Id_prof'];
+                           $nrc = $_GET['nrc'];
+                           $consulta2 = "INSERT INTO `dicta`(`id_Doc`, `NRCD`) VALUES ('$id_prof','$nrc')";
+                           $resultado2 = mysqli_query($app_db, $consulta2);
+                          }
+                           ?>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          </div>
+                       </form>
+
+                     </div>
+
+                   </div>
+                 </div>
+               </div>
+
              </div>
            </div>
          </div>
