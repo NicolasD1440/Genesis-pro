@@ -23,7 +23,7 @@
   <body>
     <br>
     <div class="container">
-       <div class="caja col-md-8 offset-md-2" >
+       <div class="caja col-md-10 " >
          <ul class="nav nav-tabs" id="myTab" role="tablist">
            <li class="nav-item" role="presentation">
              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Administrar Alumnos</button>
@@ -229,6 +229,7 @@
                     <th>Apellido</th>
                     <th>Correo</th>
                     <th>Contraseña</th>
+                    <th>Asignatura</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
@@ -245,6 +246,7 @@
                     echo "<td>$Datos[2]</td>";
                     echo "<td>$Datos[3]</td>";
                     echo "<td>$Datos[4]</td>";
+                    echo "<td>---------</td>";
                     echo "<td><a href='accion.php?Id_Doc=$Datos[0]'>Eliminar</a></td>";
                     echo "</tr>";
                   }

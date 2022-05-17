@@ -7,12 +7,35 @@ body{
   font-family: 'Dosis', sans-serif;
   background: linear-gradient(to bottom, #665FA2, #5F78A2, #9B5A46);
 }
-
 .Opciones{
-  text-align: center;
-  padding-top: 2%;
+  margin: auto;
+  margin-top: 20px;
+  width: 60%;
+  padding: 30px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Opciones:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+.Frm_Agregar{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .NRCS{
   padding: 0.3%;
   width: 50%;
+  text-align: center;
+  background: #29B3C4;
+  color: white;
+}
+.Lista{
+  width: 100%;
+  margin-top: 4%;
 }

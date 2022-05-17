@@ -24,7 +24,7 @@
     <br>
     <div class="container">
       <div class="row">
-       <div class="caja col-md-8 offset-md-2">
+       <div class="caja col-md-10">
 
          <ul class="nav nav-tabs" id="myTab" role="tablist">
            <li class="nav-item" role="presentation">

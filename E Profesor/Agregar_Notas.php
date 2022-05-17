@@ -5,22 +5,71 @@
     <title>Agregar notas</title>
     <link rel="stylesheet" href="assets/Estilo_ADD_Notas.css">
     <link rel="stylesheet" type="text/css" href="../A assets General/Nav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f959a384d4.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <?php
-      $Ruta = "Prof_PG_Prin.php";
-      $v1 = "<i class='fas fa-arrow-left'></i> Volver";
-      require("../B Recursos compartidos/barra-nav.php");
-     ?>
-    <main class="Opciones">
-      <select class="NRCS" name="">
-        <option hidden selected value="1">Seleccione un NRC</option>
-        <option value="valie1">5580</option>
-      </select>
-    </main>
-    <div class="Lista">
+      <?php
+        session_start();
+        $Ruta = "Prof_PG_Prin.php";
+        $v1 = "<i class='fas fa-arrow-left'></i> Volver";
+        require("../B Recursos compartidos/barra-nav.php");
+        include("../B Recursos compartidos/conexion.php");
+       ?>
+      <main class="Opciones">
+        <form class="Frm_Agregar" action="" method="">
+          <select class="form-select NRCS" name="NRCS" onchange="this.form.submit()">
+            <option disabled selected value="0">Seleccione un NRC</option>
 
-    </div>
+            <?php
+              $ID = $_SESSION['miSesion'][0];
+              $consulta = "SELECT * FROM dicta WHERE id_Doc = $ID";
+              $resultado = mysqli_query($app_db, $consulta);
+
+              while ($Datos = mysqli_fetch_array($resultado)) {
+                echo "<option value='$Datos[1]'> $Datos[1] </option>";
+              }
+            ?>
+          </select>
+
+        <?php
+          if (isset($_GET['NRCS'])) {
+            $Dato = $_GET['NRCS'];
+            $consulta = "SELECT alumnos.Id, nombre, apellido, semestre_in FROM inscribe JOIN alumnos on inscribe.Id = alumnos.Id AND inscribe.NRCM = $Dato AND inscribe.Estado = 2 ";
+            $resultado = mysqli_query($app_db, $consulta);
+        ?>
+      <div class="Lista">
+        <strong><p>Estudiantes inscritos en el NRC <?php echo $Dato; ?></p></strong>
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Semestre cursando</th>
+              <th>Calificacion</th>
+            </tr>
+          </thead>
+
+            <?php
+              while ($Rows = mysqli_fetch_array($resultado)) {
+                $_SESSION['NRC'] = $Rows[0];
+                echo "<tr>";
+                echo "<td>$Rows[0]</td>";
+                echo "<td>$Rows[1]</td>";
+                echo "<td>$Rows[2]</td>";
+                echo "<td>$Rows[3]</td>";
+                echo "<td><a href='#'>Agregar nota</a></td>";
+                echo "</tr>";
+              }
+            }
+          ?>
+        </table>
+      </div>
+      </form>
+    </main>
   </body>
 </html>

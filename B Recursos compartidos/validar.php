@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 $tabla = $_SESSION['Usuario'];
 $Tipo_Correo = $_SESSION['Correo'];
 $Tipo_Contraseña = $_SESSION['Contraseña'];
@@ -33,10 +34,10 @@ else if ($filas && $tabla =="administradores") {
 }
 else{
   ?>
-  <script type="text/javascript">
-    alert("ERROR DE AUTENTIFICACION");
-    location.href="../Index.php";
-  </script>
+  <body>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="Alertas/Log_Error.js"></script>
+  </body>
 
    <?php
 }

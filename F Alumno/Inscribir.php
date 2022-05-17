@@ -77,8 +77,13 @@
             $ID = $_SESSION['miSesion'][0];
             $consulta = "UPDATE inscribe SET Estado = 2 WHERE NRCM = $NRCC AND Id = $ID";
             $resultado = mysqli_query($app_db, $consulta);
+        ?>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../B Recursos compartidos/Alertas/Inscrita.js"></script>
+        <?php
           }
-       ?>
+        ?>
+
       </aside>
     </div>
   </body>

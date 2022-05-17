@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 14, 2022 at 02:26 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 17-05-2022 a las 09:16:44
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `genesis`
+-- Base de datos: `genesis`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administradores`
+-- Estructura de tabla para la tabla `administradores`
 --
 
 CREATE TABLE `administradores` (
@@ -36,7 +36,7 @@ CREATE TABLE `administradores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `administradores`
+-- Volcado de datos para la tabla `administradores`
 --
 
 INSERT INTO `administradores` (`IdAdmin`, `NombreAdmin`, `ApellidoAdmin`, `CorreoAdmin`, `ContraseñaAdmin`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `administradores` (`IdAdmin`, `NombreAdmin`, `ApellidoAdmin`, `Corre
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alumnos`
+-- Estructura de tabla para la tabla `alumnos`
 --
 
 CREATE TABLE `alumnos` (
@@ -58,18 +58,38 @@ CREATE TABLE `alumnos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `alumnos`
+-- Volcado de datos para la tabla `alumnos`
 --
 
 INSERT INTO `alumnos` (`Id`, `nombre`, `apellido`, `correo`, `contraseña`, `semestre_in`) VALUES
-(1, 'Cristian Giovani', 'Cruz Herrera', 'cristian@uniminuto', 123, 0),
-(2, 'Nicolas ', 'Castiblanco infante', 'nicolas@uniminuto', 2, 0),
-(3, 'Diego', 'Rivera Cardenas', 'diego@uniminuto', 2, 0);
+(1, 'Cristian Giovani', 'Cruz Herrera', 'cristian@uniminuto', 123, 1),
+(2, 'Nicolas ', 'Castiblanco infante', 'nicolas@uniminuto', 2, 2),
+(3, 'Diego', 'Rivera Cardenas', 'diego@uniminuto', 2, 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `docentes`
+-- Estructura de tabla para la tabla `dicta`
+--
+
+CREATE TABLE `dicta` (
+  `id_Doc` int(11) NOT NULL,
+  `NRCD` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `dicta`
+--
+
+INSERT INTO `dicta` (`id_Doc`, `NRCD`) VALUES
+(1, 5),
+(1, 13),
+(1, 32);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `docentes`
 --
 
 CREATE TABLE `docentes` (
@@ -81,17 +101,17 @@ CREATE TABLE `docentes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `docentes`
+-- Volcado de datos para la tabla `docentes`
 --
 
 INSERT INTO `docentes` (`id_Doc`, `NombreDoc`, `ApellidoDoc`, `CorreoDoc`, `ContraseñaDoc`) VALUES
-(2, 'Jaime Andres', 'Tovar Muñetones', 'Jaime@uniminuto', '9'),
-(1, 'Guillermo Enrique ', 'Becerra Pirajan', 'Guillermo@uniminuto', '9');
+(1, 'Guillermo Enrique', 'Becerra Pirajan', 'Guillermo@uniminuto', '9'),
+(2, 'Jaime Andres', 'Tovar Muñetones', 'Jaime@uniminuto', '9');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inscribe`
+-- Estructura de tabla para la tabla `inscribe`
 --
 
 CREATE TABLE `inscribe` (
@@ -101,17 +121,17 @@ CREATE TABLE `inscribe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `inscribe`
+-- Volcado de datos para la tabla `inscribe`
 --
 
 INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
-(1, 1, 4),
-(1, 2, 4),
-(1, 3, 4),
-(1, 4, 4),
-(1, 5, 4),
-(1, 6, 4),
-(1, 7, 4),
+(1, 1, 2),
+(1, 2, 2),
+(1, 3, 2),
+(1, 4, 2),
+(1, 5, 2),
+(1, 6, 2),
+(1, 7, 2),
 (1, 8, 4),
 (1, 9, 4),
 (1, 10, 4),
@@ -131,17 +151,17 @@ INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
 (1, 24, 4),
 (1, 25, 4),
 (1, 26, 4),
-(2, 3, 4),
-(2, 4, 4),
-(2, 5, 4),
-(2, 6, 4),
-(2, 7, 4),
-(2, 8, 4),
-(2, 9, 4),
-(2, 10, 4),
-(2, 11, 4),
-(2, 12, 4),
-(2, 13, 4),
+(2, 3, 3),
+(2, 4, 1),
+(2, 5, 1),
+(2, 6, 1),
+(2, 7, 1),
+(2, 8, 2),
+(2, 9, 2),
+(2, 10, 2),
+(2, 11, 2),
+(2, 12, 2),
+(2, 13, 2),
 (2, 14, 4),
 (2, 15, 4),
 (2, 16, 4),
@@ -155,10 +175,10 @@ INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
 (2, 24, 4),
 (2, 25, 4),
 (2, 26, 4),
-(2, 1, 4),
-(2, 2, 4),
-(3, 18, 4),
-(3, 16, 4),
+(2, 1, 1),
+(2, 2, 1),
+(3, 18, 1),
+(3, 16, 1),
 (1, 27, 4),
 (1, 28, 4),
 (1, 29, 4),
@@ -235,38 +255,38 @@ INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
 (2, 62, 4),
 (2, 63, 4),
 (2, 64, 4),
-(3, 1, 4),
-(3, 2, 4),
-(3, 3, 4),
-(3, 4, 4),
-(3, 5, 4),
-(3, 6, 4),
-(3, 7, 4),
-(3, 8, 4),
-(3, 9, 4),
-(3, 10, 4),
-(3, 11, 4),
-(3, 12, 4),
-(3, 13, 4),
-(3, 14, 4),
-(3, 15, 4),
+(3, 1, 1),
+(3, 2, 1),
+(3, 3, 1),
+(3, 4, 3),
+(3, 5, 1),
+(3, 6, 1),
+(3, 7, 1),
+(3, 8, 1),
+(3, 9, 1),
+(3, 10, 1),
+(3, 11, 3),
+(3, 12, 1),
+(3, 13, 1),
+(3, 14, 1),
+(3, 15, 1),
 (3, 41, 4),
-(3, 17, 4),
+(3, 17, 1),
 (3, 42, 4),
-(3, 19, 4),
-(3, 20, 4),
-(3, 21, 4),
-(3, 22, 4),
-(3, 23, 4),
-(3, 24, 4),
-(3, 25, 4),
-(3, 26, 4),
-(3, 27, 4),
-(3, 28, 4),
-(3, 29, 4),
-(3, 30, 4),
-(3, 31, 4),
-(3, 32, 4),
+(3, 19, 1),
+(3, 20, 1),
+(3, 21, 1),
+(3, 22, 1),
+(3, 23, 1),
+(3, 24, 1),
+(3, 25, 1),
+(3, 26, 1),
+(3, 27, 2),
+(3, 28, 2),
+(3, 29, 2),
+(3, 30, 2),
+(3, 31, 2),
+(3, 32, 2),
 (3, 33, 4),
 (3, 34, 4),
 (3, 35, 4),
@@ -301,7 +321,7 @@ INSERT INTO `inscribe` (`Id`, `NRCM`, `Estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `materias`
+-- Estructura de tabla para la tabla `materias`
 --
 
 CREATE TABLE `materias` (
@@ -312,7 +332,7 @@ CREATE TABLE `materias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `materias`
+-- Volcado de datos para la tabla `materias`
 --
 
 INSERT INTO `materias` (`NRC`, `Nombre_m`, `Semestre`, `Creditos`) VALUES
@@ -382,34 +402,54 @@ INSERT INTO `materias` (`NRC`, `Nombre_m`, `Semestre`, `Creditos`) VALUES
 (64, 'ELECTIVA CPC III', 10, 2);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `alumnos`
+-- Indices de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `inscribe`
+-- Indices de la tabla `dicta`
+--
+ALTER TABLE `dicta`
+  ADD KEY `id_Doc` (`id_Doc`,`NRCD`),
+  ADD KEY `NRCD` (`NRCD`);
+
+--
+-- Indices de la tabla `docentes`
+--
+ALTER TABLE `docentes`
+  ADD PRIMARY KEY (`id_Doc`);
+
+--
+-- Indices de la tabla `inscribe`
 --
 ALTER TABLE `inscribe`
   ADD KEY `Id` (`Id`,`NRCM`),
   ADD KEY `NRC` (`NRCM`);
 
 --
--- Indexes for table `materias`
+-- Indices de la tabla `materias`
 --
 ALTER TABLE `materias`
   ADD PRIMARY KEY (`NRC`);
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `inscribe`
+-- Filtros para la tabla `dicta`
+--
+ALTER TABLE `dicta`
+  ADD CONSTRAINT `dicta_ibfk_1` FOREIGN KEY (`NRCD`) REFERENCES `materias` (`NRC`),
+  ADD CONSTRAINT `dicta_ibfk_2` FOREIGN KEY (`id_Doc`) REFERENCES `docentes` (`id_Doc`);
+
+--
+-- Filtros para la tabla `inscribe`
 --
 ALTER TABLE `inscribe`
   ADD CONSTRAINT `inscribe_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `alumnos` (`Id`),
