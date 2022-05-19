@@ -27,7 +27,7 @@
         <h1 class="titulo">Inscribe tus asignaturas</h1>
         <p>Seleccione el NRC de la asignatura que desea inscribir</p>
         <select class="form-select" name="NRC" onchange="this.form.submit()">
-          <option disabled selected value="0">Seleccione el ID:</option>
+          <option disabled selected value="0">Seleccione NRC:</option>
 
           <?php
             $consulta = "SELECT * FROM materias WHERE Semestre = '$Cursando'";

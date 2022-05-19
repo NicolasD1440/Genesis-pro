@@ -49,7 +49,7 @@
                    $consulta = "SELECT COUNT(Estado) FROM inscribe WHERE Estado = 1 AND Id = $ID";
                    $resultado = mysqli_query($app_db, $consulta);
                    while($rows1 = mysqli_fetch_array($resultado)) {
-                     $ecuacion = ($rows1[0]*100)/26;
+                     $ecuacion = ($rows1[0]*100)/64;
                      echo "<h1>";
                      echo round($ecuacion, 2) . "%";
                      echo "</h1>";

@@ -36,3 +36,15 @@ h3{
   justify-content: flex-start;
   padding: 0 2%;
 }
+.tabla_porcentaje{
+  text-align: center;
+  width: 100%;
+  margin-top: 8%;
+}
+.tabla_porcentaje td{
+  padding: 2%;
+  font-size: 3em;
+}
+#Numero{
+  font-size: 8em;
+}
