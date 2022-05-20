@@ -56,7 +56,7 @@
               $Dato = $_GET['NRC'];
               $consulta = "SELECT * FROM materias WHERE NRC = $Dato";
               $resultado = mysqli_query($app_db, $consulta);
-
+              
               while ($Rows = mysqli_fetch_array($resultado)) {
                 $_SESSION['NRC'] = $Rows[0];
                 echo "<tr>";
